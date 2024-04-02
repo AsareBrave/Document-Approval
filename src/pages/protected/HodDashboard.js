@@ -1,18 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setPageTitle } from "../../features/common/headerSlice";
-import Dashboard from "../../features/dashboard/index";
+import HodDashboard from "../../features/hodDashboard/index";
 
 function InternalPage() {
  const dispatch = useDispatch();
 
  useEffect(() => {
-  dispatch(setPageTitle({ title: "Dashboard" }));
+  dispatch(setPageTitle({ title: "HOD Dashboard" }));
  }, []);
 
- return (
-  <Dashboard />
- );
+ return <HodDashboard />;
 }
 
 export default InternalPage;
