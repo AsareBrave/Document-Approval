@@ -16,4 +16,28 @@ const routes = [
  }
 ];
 
+export const hodRoutes = [
+ {
+  path: "/app/dashboard/hod",
+  icon: <Squares2X2Icon className={iconClasses} />,
+  name: "Dashboard"
+ },
+];
+
+export const DeanRoutes = [
+ {
+  path: "/app/dashboard/dean",
+  icon: <Squares2X2Icon className={iconClasses} />,
+  name: "Dashboard"
+ }
+];
+
+export const LecturerRoutes = [
+ {
+  path: "/app/dashboard/lecturer",
+  icon: <Squares2X2Icon className={iconClasses} />,
+  name: "Dashboard"
+ }
+];
+
 export default routes;
