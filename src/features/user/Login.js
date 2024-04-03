@@ -23,6 +23,7 @@ function Login() {
    return setErrorMessage("Password is required! (use any value)");
   else {
    const email = loginObj.emailId;
+
    setLoading(true);
    // Call API to check user credentials and save token in localstorage
    localStorage.setItem("token", "DumyTokenHere");
