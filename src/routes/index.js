@@ -7,6 +7,9 @@ import { lazy } from "react";
 const Dashboard = lazy(() => import("../pages/protected/Dashboard"));
 const HodDashboard = lazy(() => import("../pages/protected/HodDashboard"));
 const DeanDashboard = lazy(() => import("../pages/protected/DeanDashboard"));
+// const LecturerDashboard = lazy(() =>
+//  import("../pages/protected/LecturerDashboard")
+// );
 
 const routes = [
  {
@@ -20,6 +23,10 @@ const routes = [
  {
   path: "/dashboard/dean", // the url
   component: DeanDashboard // view rendered
+ },
+ {
+  // path: "/dashboard/lecturer", // the url
+  // component: LecturerDashboard // view rendered
  }
 ];
 
