@@ -18,14 +18,26 @@ function Login(){
         e.preventDefault()
         setErrorMessage("")
 
-        if(loginObj.emailId.trim() === "")return setErrorMessage("Email Id is required! (use any value)")
-        if(loginObj.password.trim() === "")return setErrorMessage("Password is required! (use any value)")
-        else{
-            setLoading(true)
+        if(loginObj.emailId.trim() === "")
+        {return setErrorMessage("Email Id is required! (use any value)")}
+        if(loginObj.password.trim() === "")
+        {return setErrorMessage("Password is required! (use any value)")}
+        if (loginObj.emailId.trim() === "user@gmail.com" && loginObj.password.trim() === "user") {
+            setLoading(true);
             // Call API to check user credentials and save token in localstorage
-            localStorage.setItem("token", "DumyTokenHere")
-            setLoading(false)
-            window.location.href = '/app/welcome'
+            localStorage.setItem("token", "DumyTokenHere");
+            setLoading(false);
+            window.location.href = '/app/dashboard';
+        }
+        if (loginObj.emailId.trim() === "lecturer@gmail.com" && loginObj.password.trim() === "lecturer") {
+            setLoading(true);
+            // Call API to check user credentials and save token in localstorage
+            localStorage.setItem("token", "DumyTokenHere");
+            setLoading(false);
+            window.location.href = '/app/dashboard/lecturer';
+        }
+        else{
+            return setErrorMessage("Invalid login details!")
         }
     }
 
