@@ -30,7 +30,7 @@ const TopSideButtons = () => {
  );
 };
 
-function Leads() {
+function HodLeads() {
  const { leads } = useSelector((state) => state.lead);
  const dispatch = useDispatch();
 
@@ -127,4 +127,4 @@ function Leads() {
  );
 }
 
-export default Leads;
+export default HodLeads;

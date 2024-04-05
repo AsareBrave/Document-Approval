@@ -5,38 +5,54 @@ import { lazy } from "react";
 const Dashboard = lazy(() => import("../pages/protected/Dashboard"));
 const HodDashboard = lazy(() => import("../pages/protected/HodDashboard"));
 const DeanDashboard = lazy(() => import("../pages/protected/DeanDashboard"));
-const LecturerDashboard = lazy(
-  () => import("../pages/protected/lecturerDashboard")
+const LecturerDashboard = lazy(() =>
+ import("../pages/protected/lecturerDashboard")
 );
-const Leads = lazy(() => import('../pages/protected/Leads'))
-
+const LecturerLeads = lazy(() => import("../pages/protected/LecturerLeads"));
+const HodLeads = lazy(() => import("../pages/protected/HodLeads"));
+const DefaultLeads = lazy(() => import("../pages/protected/DefaultLeads"));
 
 const routes = [
-  {
-    path: "/dashboard", // the url
-    component: Dashboard, // view rendered
-  },
-  {
-    path: "/dashboard/hod", // the url
-    component: HodDashboard, // view rendered
-  },
-  {
-    path: "/dashboard/dean", // the url
-    component: DeanDashboard, // view rendered
-  },
-  {
-    path: "/dashboard/lecturer", // the url
-    component: LecturerDashboard, // view rendered
-  },
-  {
-    path: "/dashboard/lecturer", // the url
-    component: LecturerDashboard, // view rendered
-  },
+  // default routes (student)
+ {
+  path: "/dashboard", // the url
+  component: Dashboard // view rendered
+ },
+ {
+  path: "/dashboard/leads",
+  component: DefaultLeads
+ },
 
-  {
-    path: "/dashboard/leads", // the url
-    component: Leads, // view rendered
-  },
+//  hod routes
+ {
+  path: "/dashboard/hod", // the url
+  component: HodDashboard // view rendered
+ },
+ {
+  path: "/dashboard/hod/leads",
+  component: HodLeads
+ },
+
+//  dean routes
+ {
+  path: "/dashboard/dean", // the url
+  component: DeanDashboard // view rendered
+ },
+
+//  lecturer
+ {
+  path: "/dashboard/lecturer", // the url
+  component: LecturerDashboard // view rendered
+ },
+ {
+  path: "/dashboard/lecturer", // the url
+  component: LecturerDashboard // view rendered
+ },
+
+ {
+  path: "/dashboard/lecturer/leads", // the url
+  component: LecturerLeads // view rendered
+ }
 ];
 
 export default routes;
