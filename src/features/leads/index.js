@@ -14,7 +14,7 @@ const TopSideButtons = () => {
 
  const openAddNewLeadModal = () => {
   dispatch(
-   openModal({ title: "Add New Lead", bodyType: MODAL_BODY_TYPES.LEAD_ADD_NEW })
+   openModal({ title: "Add New Document", bodyType: MODAL_BODY_TYPES.LEAD_ADD_NEW })
   );
  };
 
@@ -55,7 +55,7 @@ function Leads() {
     title: "Confirmation",
     bodyType: MODAL_BODY_TYPES.CONFIRMATION,
     extraObject: {
-     message: `Are you sure you want to delete this lead?`,
+     message: `Are you sure you want to delete this Document?`,
      type: CONFIRMATION_MODAL_CLOSE_TYPES.LEAD_DELETE,
      index
     }
@@ -66,7 +66,7 @@ function Leads() {
  return (
   <>
    <TitleCard
-    title="Current Leads"
+    title="Current Document"
     topMargin="mt-2"
     TopSideButtons={<TopSideButtons />}
    >
@@ -95,8 +95,8 @@ function Leads() {
              </div>
             </div>
             <div>
-             <div className="font-bold">{l.first_name}</div>
-             <div className="text-sm opacity-50">{l.last_name}</div>
+             <div className="font-bold">{l.document_name}</div>
+             <div className="text-sm opacity-50">{l.document_description}</div>
             </div>
            </div>
           </td>

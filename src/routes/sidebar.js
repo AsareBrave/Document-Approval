@@ -13,7 +13,7 @@ const routes = [
  {
   path: "/app/dashboard/leads", // url
   icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
-  name: "Leads" // name that appear in Sidebar
+  name: "Document" // name that appear in Sidebar
  }
 ];
 

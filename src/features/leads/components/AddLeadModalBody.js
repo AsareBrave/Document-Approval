@@ -4,10 +4,11 @@ import InputText from '../../../components/Input/InputText'
 import ErrorText from '../../../components/Typography/ErrorText'
 import { showNotification } from "../../common/headerSlice"
 import { addNewLead } from "../leadSlice"
+import docuImg from "../../../../public/documet.jpg"
 
 const INITIAL_LEAD_OBJ = {
-    first_name : "",
-    last_name : "",
+    document_name : "",
+    document_description : "",
     email : ""
 }
 
@@ -19,18 +20,18 @@ function AddLeadModalBody({closeModal}){
 
 
     const saveNewLead = () => {
-        if(leadObj.first_name.trim() === "")return setErrorMessage("First Name is required!")
-        else if(leadObj.email.trim() === "")return setErrorMessage("Email id is required!")
+        if(leadObj.document_name.trim() === "")return setErrorMessage("Document is required!")
+        // else if(leadObj.email.trim() === "")return setErrorMessage("Email id is required!")
         else{
             let newLeadObj = {
                 "id": 7,
                 "email": leadObj.email,
-                "first_name": leadObj.first_name,
-                "last_name": leadObj.last_name,
-                "avatar": "https://reqres.in/img/faces/1-image.jpg"
+                "document_name": leadObj.document_name,
+                "document_description": leadObj.document_description,
+                "avatar": {docuImg}
             }
             dispatch(addNewLead({newLeadObj}))
-            dispatch(showNotification({message : "New Lead Added!", status : 1}))
+            dispatch(showNotification({message : "New Document Added!", status : 1}))
             closeModal()
         }
     }
@@ -43,11 +44,11 @@ function AddLeadModalBody({closeModal}){
     return(
         <>
 
-            <InputText type="text" defaultValue={leadObj.first_name} updateType="first_name" containerStyle="mt-4" labelTitle="First Name" updateFormValue={updateFormValue}/>
+            <InputText type="text" defaultValue={leadObj.document_name} updateType="document_name" containerStyle="mt-4" labelTitle="Document Name" updateFormValue={updateFormValue}/>
 
-            <InputText type="text" defaultValue={leadObj.last_name} updateType="last_name" containerStyle="mt-4" labelTitle="Last Name" updateFormValue={updateFormValue}/>
+            <InputText type="text" defaultValue={leadObj.document_description} updateType="document_description" containerStyle="mt-4" labelTitle="Document description" updateFormValue={updateFormValue}/>
 
-            <InputText type="email" defaultValue={leadObj.email} updateType="email" containerStyle="mt-4" labelTitle="Email Id" updateFormValue={updateFormValue}/>
+            {/* <InputText type="email" defaultValue={leadObj.email} updateType="email" containerStyle="mt-4" labelTitle="Email Id" updateFormValue={updateFormValue}/> */}
 
 
             <ErrorText styleClass="mt-16">{errorMessage}</ErrorText>
