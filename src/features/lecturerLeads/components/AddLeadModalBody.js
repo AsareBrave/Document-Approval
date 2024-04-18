@@ -27,7 +27,8 @@ function AddLeadModalBody({closeModal}){
                 "email": leadObj.email,
                 "first_name": leadObj.first_name,
                 "last_name": leadObj.last_name,
-                "avatar": "https://reqres.in/img/faces/1-image.jpg"
+                "avatar": "https://reqres.in/img/faces/1-image.jpg",
+                documents_uploaded: 1
             }
             dispatch(addNewLead({newLeadObj}))
             dispatch(showNotification({message : "New Lead Added!", status : 1}))

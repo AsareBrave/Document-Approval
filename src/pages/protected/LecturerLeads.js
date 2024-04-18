@@ -7,7 +7,7 @@ function InternalPage() {
  const dispatch = useDispatch();
 
  useEffect(() => {
-  dispatch(setPageTitle({ title: "Lecturer Leads" }));
+  dispatch(setPageTitle({ title: "Documents Uploaded" }));
  }, []);
 
  return <LecturerLeads />;

@@ -1,15 +1,12 @@
+import TrashIcon from "@heroicons/react/24/outline/TrashIcon";
 import moment from "moment";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TitleCard from "../../components/Cards/TitleCard";
-import { openModal } from "../common/modalSlice";
-import { deleteLead, getLeadsContent } from "./leadSlice";
 import {
  CONFIRMATION_MODAL_CLOSE_TYPES,
  MODAL_BODY_TYPES
 } from "../../utils/globalConstantUtil";
-import TrashIcon from "@heroicons/react/24/outline/TrashIcon";
-import { showNotification } from "../common/headerSlice";
+import { openModal } from "../common/modalSlice";
 
 const TopSideButtons = () => {
  const dispatch = useDispatch();
@@ -41,14 +38,14 @@ function LecturerLeads() {
  //  }, []);
 
  const getDummyStatus = (index) => {
-  if (index % 5 === 0) return <div className="badge">Not Interested</div>;
+  if (index % 5 === 0) return <div className="badge badge-warning">Rejected</div>;
   else if (index % 5 === 1)
-   return <div className="badge badge-primary">In Progress</div>;
+   return <div className="badge badge-primary">Pending</div>;
   else if (index % 5 === 2)
-   return <div className="badge badge-secondary">Sold</div>;
+   return <div className="badge badge-secondary">Approved</div>;
   else if (index % 5 === 3)
    return <div className="badge badge-accent">Need Followup</div>;
-  else return <div className="badge badge-ghost">Open</div>;
+  else return <div className="badge badge-ghost">Approved by HOD</div>;
  };
 
  const deleteCurrentLead = (index) => {
@@ -68,7 +65,7 @@ function LecturerLeads() {
  return (
   <>
    <TitleCard
-    title="Current Leads"
+    title="Current Documents"
     topMargin="mt-2"
     TopSideButtons={<TopSideButtons />}
    >
@@ -81,7 +78,7 @@ function LecturerLeads() {
         <th>Email Id</th>
         <th>Created At</th>
         <th>Status</th>
-        <th>Assigned To</th>
+        <th>Documents Uploaded</th>
         <th></th>
        </tr>
       </thead>
@@ -109,7 +106,7 @@ function LecturerLeads() {
             .format("DD MMM YY")}
           </td>
           <td>{getDummyStatus(k)}</td>
-          <td>{l.last_name}</td>
+          <td>{l.documents_uploaded}</td>
           <td>
            <button
             className="btn btn-square btn-ghost"

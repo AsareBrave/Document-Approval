@@ -13,7 +13,7 @@ const routes = [
  {
   path: "/app/dashboard/leads", // url
   icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
-  name: "Document" // name that appear in Sidebar
+  name: "Documents" // name that appear in Sidebar
  }
 ];
 
@@ -27,7 +27,7 @@ export const hodRoutes = [
  {
   path: "/app/dashboard/hod/leads", // url
   icon: <InboxArrowDownIcon className={iconClasses} />, // icon component
-  name: "Leads" // name that appear in Sidebar
+  name: "Documents" // name that appear in Sidebar
  }
 ];
 
@@ -48,7 +48,7 @@ export const LecturerRoutes = [
  {
   path: "/app/dashboard/lecturer/leads",
   icon: <Squares2X2Icon className={iconClasses} />,
-  name: "Leads"
+  name: "Documents"
  }
 ];
 

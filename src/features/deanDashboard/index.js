@@ -17,28 +17,22 @@ import { useState } from "react";
 
 const statsData = [
  {
-  title: "New Users",
-  value: "34.7k",
+  title: "Total Documents",
+  value: "100",
   icon: <UserGroupIcon className="w-8 h-8" />,
   description: "↗︎ 2300 (22%)"
  },
  {
-  title: "Total Sales",
-  value: "$34,545",
+  title: "Approved Documents",
+  value: "35",
   icon: <CreditCardIcon className="w-8 h-8" />,
   description: "Current month"
  },
  {
-  title: "Pending Leads",
-  value: "450",
+  title: "Rejected Documents",
+  value: "4",
   icon: <CircleStackIcon className="w-8 h-8" />,
   description: "50 in hot leads"
- },
- {
-  title: "Active Users",
-  value: "5.6k",
-  icon: <UsersIcon className="w-8 h-8" />,
-  description: "↙ 300 (18%)"
  }
 ];
 
@@ -61,7 +55,7 @@ function DeanDashboard() {
    <DashboardTopBar updateDashboardPeriod={updateDashboardPeriod} />
 
    {/** ---------------------- Different stats content 1 ------------------------- */}
-   <div className="grid lg:grid-cols-4 mt-2 md:grid-cols-2 grid-cols-1 gap-6">
+   <div className="grid lg:grid-cols-3 mt-2 md:grid-cols-2 grid-cols-1 gap-6">
     {statsData.map((d, k) => {
      return <DashboardStats key={k} {...d} colorIndex={k} />;
     })}
